@@ -13,29 +13,29 @@ function dayOfWeek($month, $date, $year)
 {
 
 	$daystable = array( "Sunday" => 0,
-						   "Monday" => 1,
-						   "Tuesday" => 2,
-						   "Wednesday" => 3,
-						   "Thursday" => 4,
-						   "Friday" => 5,
-						   "Saturday" => 6
-						 );
+			    "Monday" => 1,
+			    "Tuesday" => 2,
+			    "Wednesday" => 3,
+			    "Thursday" => 4,
+			    "Friday" => 5,
+			    "Saturday" => 6
+			  );
 						 
 	$monthtable = array( "January" => 0,
-						   "February" => 3,
-						   "March" => 3,
-						   "April" => 6,
-						   "May" => 1,
-						   "June" => 4,
-						   "July" => 6,
-						   "August" => 2,
-						   "September" => 5,
-						   "October" => 0,
-						   "November" => 3,
-						   "December" => 5,
-						   "Januaryleap" => 6,
-						   "Febrauryleap" => 2
-						 );					 
+			     "February" => 3,
+			     "March" => 3,
+			     "April" => 6,
+			     "May" => 1,
+			     "June" => 4,
+			     "July" => 6,
+			     "August" => 2,
+			     "September" => 5,
+			     "October" => 0,
+			     "November" => 3,
+			     "December" => 5,
+			     "Januaryleap" => 6,
+			     "Febrauryleap" => 2
+			    );					 
 
 	$century = getCentury($year);
 	$year = strval($year);
@@ -43,7 +43,7 @@ function dayOfWeek($month, $date, $year)
 	
 	if( is_leap($year) )
 	{
-		$month = str_replace(array("January", "February"), array("JanuaryLeap", "FebruaryLeap"), ucwords(strtolower($month)));
+		$month = str_replace(array("January", "February"), array("Januaryleap", "Februaryleap"), ucwords(strtolower($month)));
 	}
 	
 	$month = $monthtable[ucwords(strtolower($month))];
