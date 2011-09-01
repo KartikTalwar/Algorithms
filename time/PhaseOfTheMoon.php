@@ -27,7 +27,7 @@ function PhaseOfTheMoon($month, $day, $year)
 	{
 		$index = 7;
 	}
-	$status = $description[$index];
+	$phase = $description[$index];
 
 	$light = (int) 2 * $days_into_phase * 100/29;
 	$date = $day.$months[$month-1].$year;
@@ -36,8 +36,8 @@ function PhaseOfTheMoon($month, $day, $year)
 		$light = abs($light - 200);
 	}
 	
-	//return array("Date" => $date, "Phase" => $status, "Light" => $light);
-	return $status;
+	//return array("Date" => $date, "Phase" => $phase, "Light" => $light);
+	return $phase;
 }
 
 
