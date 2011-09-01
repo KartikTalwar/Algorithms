@@ -21,17 +21,17 @@ function PhaseOfTheMoon($month, $day, $year)
 		$day = 1;
 	}
 	
-    $days_into_phase = (($ages[($year + 1) % 19] + (($day + $offsets[$month-1]) % 30) + ($year < 1900)) % 30);
-    $index = (int) ($days_into_phase + 2) * 16/59.0;
-    if($index > 7)
+	$days_into_phase = (($ages[($year + 1) % 19] + (($day + $offsets[$month-1]) % 30) + ($year < 1900)) % 30);
+	$index = (int) ($days_into_phase + 2) * 16/59.0;
+	if($index > 7)
 	{
-        $index = 7;
+		$index = 7;
 	}
-    $status = $description[$index];
+	$status = $description[$index];
 
-    $light = (int) 2 * $days_into_phase * 100/29;
-    $date = $day.$months[$month-1].$year;
-    if($light > 100)
+	$light = (int) 2 * $days_into_phase * 100/29;
+	$date = $day.$months[$month-1].$year;
+	if($light > 100)
 	{
 		$light = abs($light - 200);
 	}
