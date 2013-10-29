@@ -1,3 +1,9 @@
+"""
+
+Given a range in the form of a list sorted or unsorted, find the missing number
+
+"""
+
 
 def find_missing_element_sorted(arr):
   first = arr[0]
@@ -48,8 +54,8 @@ def find_missing_element_unsorted_2(arr):
 
 
 def find_missing_element_unsorted_3(arr):
-  x1 = 1
-  x2 = arr[0]
+  x1 = 0
+  x2 = 0
   max = arr[0]
   min = arr[1]
 
@@ -59,11 +65,11 @@ def find_missing_element_unsorted_3(arr):
     if arr[k] > max:
       max = arr[k]
 
-  for i in range(1,len(arr)):
+  for i in range(len(arr)):
     x2 ^= arr[i] 
 
-  for j in range(min, max):
-    x1 ^= i
+  for j in range(min, max+1):
+    x1 ^= j
 
   return x1^x2
 
